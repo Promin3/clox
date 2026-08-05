@@ -1,0 +1,9 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "command": {
+    "push clox": {
+      "description": "一键 add → 分析变更 → 生成 commit message → 更新 README → push",
+      "template": "你是 clox 项目的自动提交流程，全自动执行，不询问用户。\n\n## 步骤\n\n### 1. 暂存\n```bash\ngit add -A\n```\n\n### 2. 分析变更 包括代码的变更以及整个项目其他部分的变更\n```bash\ngit diff --cached --stat\ngit diff --cached\n```\n\n### 3. 生成中文 commit message 并提交\n根据 diff 用中文概括变更，格式：`<type>：<一句话描述>`\ntype 取：feat / fix / refactor / docs / test / chore\n示例：`feat：实现 if/while/for 控制流和逻辑运算符`\n\n执行：`git commit -m \"<message>\"`\n\n### 4. 增量更新 README\n- 读取 README.md 的「项目结构」部分\n- 执行 `git diff --cached --name-only --diff-filter=A` 检查新增源文件（*.c, *.h, CMakeLists.txt）\n- 若有新增文件未出现在 README 的项目结构树中，更新 README\n- 若 README 有变更，执行 `git add README.md && git commit -m \"docs：更新 README\"`\n\n### 5. 推送\n```bash\ngit push origin HEAD\n```\n\n若无任何变更，输出「没有需要提交的变更」后结束。"
+    }
+  }
+}

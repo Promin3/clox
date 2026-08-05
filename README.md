@@ -11,5 +11,7 @@
 ├── memory.h / memory.c         # 动态数组内存管理（reallocate）
 ├── debug.h / debug.c           # 字节码反汇编（含全部 opcode）
 ├── vm.h / vm.c                 # 栈式虚拟机（push / pop / run / 算术运算）
+├── scanner.h / scanner.c       # 词法分析器（词素识别、保留字匹配）
+├── compiler.h / compiler.c     # 编译器（衔接扫描器，输出 Token 流）
 └── README.md
 ```

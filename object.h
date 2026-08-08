@@ -12,22 +12,24 @@
 
 typedef enum {
     OBJ_STRING,
-  } ObjType;
+} ObjType;
 
 struct Obj {
     ObjType type;
-    struct Obj* next;
+    struct Obj *next;
 };
 
 struct ObjString {
     Obj obj;
     int length;
-    char* chars;
+    char *chars;
     uint32_t hash;
 };
 
-ObjString* takeString(char* chars, int length);
-ObjString* copyString(const char* chars, int length);
+ObjString *takeString(char *chars, int length);
+
+ObjString *copyString(const char *chars, int length);
+
 void printObject(Value value);
 
 static inline bool isObjType(Value value, ObjType type) {

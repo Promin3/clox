@@ -1,5 +1,19 @@
 # clox
 
+## 构建与运行
+
+CLion 打开项目后直接 `Run` 即可（默认构建目录为 `cmake-build-debug`）。
+
+```bash
+# REPL 模式
+./cmake-build-debug/clox
+```
+
+```bash
+# 执行脚本文件
+./cmake-build-debug/clox test.lox
+```
+
 ## 项目结构
 
 ```
